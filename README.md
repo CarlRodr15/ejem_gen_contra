@@ -1,5 +1,10 @@
 # Generador de Contraseñas Seguras
 
+![Node Version](https://img.shields.io/badge/Node.js-v16.0%2B-green?style=for-the-badge&logo=nodedotjs)
+![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-yellow?style=for-the-badge)
+![Dependencias](https://img.shields.io/badge/Dependencias-Chalk-blue?style=for-the-badge&logo=npm)
+![Estado](https://img.shields.io/badge/Estado-Estable-brightgreen?style=for-the-badge)
+
 ## Descripción
 Módulo de código libre diseñado para que los funcionarios puedan generar contraseñas fuertes y aleatorias directamente desde su terminal, garantizando la seguridad de sus cuentas institucionales.
 
@@ -11,7 +16,7 @@ Módulo de código libre diseñado para que los funcionarios puedan generar cont
 Debido a que el proyecto tiene dependencias externas, es necesario descargar los paquetes antes del primer uso:
 
 ```
-git clone [https://github.com/xxxxx/generador-pass-node.git](https://github.com/xxxxx/generador-pass-node.git)
+git clone [https://github.com/CarlRodr15/ejem_gen_contra](https://github.com/CarlRodr15/ejem_gen_contra)
 cd generador-pass-node
 npm install
 ```
