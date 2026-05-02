@@ -1,48 +1,53 @@
-# Conversor de Unidades (Física)
+# Generador de Contraseñas Seguras
 
 ## Descripción
-Script desarrollado para apoyar las prácticas de laboratorio de los estudiantes de la I.E. Simón Bolívar, permitiendo conversiones rápidas entre sistemas de medidas.
+Módulo de código libre diseñado para que los funcionarios puedan generar contraseñas fuertes y aleatorias directamente desde su terminal, garantizando la seguridad de sus cuentas institucionales.
 
 ## Requisitos Previos
-* **Python**: Se requiere **Python 3.10** o superior. No se requieren librerías externas.
+* **Node.js**: Es obligatorio tener instalada la versión **v16.0** o superior.
+* **Dependencias**: Se utiliza la librería chalk para mejorar la visibilidad de la terminal con colores.
 
 ## Instalación
-Clona el repositorio y accede a la carpeta del proyecto para comenzar:
+Debido a que el proyecto tiene dependencias externas, es necesario descargar los paquetes antes del primer uso:
 
 ```
-git clone [https://github.com/xxxxx/conversor-fisica-python.git](https://github.com/xxxxx/conversor-fisica-python.git)
-cd conversor-fisica-python
+git clone [https://github.com/xxxxx/generador-pass-node.git](https://github.com/xxxxx/generador-pass-node.git)
+cd generador-pass-node
+npm install
 ```
 
 ## Uso
-El programa guía al usuario a través de una serie de preguntas en la terminal. Para ejecutarlo:
+El proyecto está configurado con scripts de npm para facilitar su ejecución. Para iniciarlo, utiliza:
 
 ```
-python convertidor_uni.py
+npm start
 ```
 
-**Flujo de preguntas:**
-1. tipo_medida: Escribe temp para temperatura o dist para distancia.
-2. valor_origen: Ingresa el número que deseas convertir.
-3. unidad_destino: Selecciona la unidad final (C, F, KM, MI).
+**Ejemplo de ejecución con parámetros:**
+Puedes personalizar la contraseña directamente en el comando:
 
-**Ejemplo de ejecución:**
-> Resultado: 100.00 °C equivalen a 212.00 °F
+```
+npm start -- --longitud=12 --simbolos=false --numeros=true
+```
 
-## Configuración y Parámetros
+**Resultado esperado:**
+La terminal mostrará en color verde brillante:
+> Tu nueva clave es: aB3dE8fG9hI1
 
-| Parámetro | Valores permitidos | Descripción |
-| :--- | :--- | :--- |
-| tipo_medida | temp, dist | Determina el tipo de conversión física. |
-| unidad_destino | C, F, KM, MI | Unidades de destino según el tipo de medida. |
+## Parámetros de Configuración
+Nosotros podemos ajustar la generación mediante las siguientes banderas (flags):
 
-**Ajustes de precisión:**
-En el código fuente, nosotros podemos modificar la variable DECIMALES_MOSTRADOS. Por defecto es 2, pero puede aumentarse a 4 para cálculos de laboratorio más precisos.
+| Parámetro | Tipo | Por defecto | Descripción |
+| :--- | :--- | :--- | :--- |
+| --longitud | Número | 8 | Longitud de la clave (mín 8, máx 64). |
+| --simbolos | Booleano | true | Define si incluye caracteres especiales. |
+| --numeros | Booleano | true | Define si incluye números (0-9). |
+| --guardar | Flag | N/A | Si se incluye, guarda la clave en mis_claves.txt. |
 
-## Manejo de Errores
-El sistema detecta automáticamente si el usuario intenta realizar conversiones inválidas:
+## Pruebas (Tests)
+Para verificar la integridad del generador y asegurar que no hay patrones repetitivos, ejecuta:
 
-* **Unidad no reconocida**: Si se ingresa una unidad distinta a las permitidas, el sistema mostrará: [ALERTA] Unidad no reconocida. Usa solo C, F, KM o MI.
+npm run test
 
 ## Licencia
-Este proyecto educativo se entrega bajo la licencia **MIT**.
+Este proyecto se distribuye bajo la licencia **MIT**.
